@@ -98,7 +98,7 @@ const eraseText = () => {
 // Función para descargar CV
 const downloadCV = () => {
     const link = document.createElement('a');
-    link.href = '../../../public/documents/cv.pdf'; 
+    link.href = '/documents/cv.pdf'; 
     link.download = 'CV.pdf';
     link.click();
 };
