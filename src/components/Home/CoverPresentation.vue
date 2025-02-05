@@ -1,3 +1,10 @@
+<!-- COMPONENTE DE PRESENTACIÓN
+    Muestra la sección de presentación de mi persona y del portafolio
+    - Foto de perfil
+    - Descripción
+    - Contacto
+    - CV
+-->
 <template>
     <div class="md:h-[100vh]" id="start">
         <div class="grid grid-cols-12 gap-2 w-full mt-14">
@@ -11,8 +18,6 @@
                 </button>
             </div>
 
-
-            
             <!-- Sección del Efecto de Máquina de Escribir -->
             <div class="col-span-12 md:col-span-6 flex flex-col items-center justify-center bg-gray-900 bg-opacity-50 backdrop-blur-md px-6 pt-6 mx-9 md:p-6 md:m-9 rounded-xl">
                 <div class="relative">
@@ -41,6 +46,7 @@
                     <br>
                     <p>Puedes contactarme a través de mis redes sociales o descargar mi CV.</p>
                 </div>
+                <!-- Redes sociales -->
                 <div class="py-5 flex gap-2">
                     <a href="https://www.facebook.com/cristian.2002.flores/" target="_blank">
                         <FacebookIcon class="text-gray-500 hover:text-teal-500 transition-colors duration-500"/>
@@ -66,14 +72,18 @@
 
 <script setup>
 import { ref, onMounted } from "vue";
-
+// Oraciones para el efecto de máquina de escribir
 const texts = ["¡Hola mundo!", "Cristian Flores", "Ing. en TI", "Desarrollador", "Ilustrador"];
 const displayedText = ref("");
 const showCursor = ref(true);
 let textIndex = 0;
 let charIndex = 0;
 
-// Función para escribir texto
+/**
+ * Función para escribir texto
+ * Entradas: Ninguna
+ * Salida: Oración del arreglo texts
+ */
 const typeText = () => {
     if (charIndex < texts[textIndex].length) {
         displayedText.value += texts[textIndex][charIndex];
@@ -84,7 +94,11 @@ const typeText = () => {
     }
 };
 
-// Función para borrar texto
+/**
+ * Función para borrar texto
+ * Entradas: Ninguna
+ * Salida: Texto eliminado
+ */
 const eraseText = () => {
     if (charIndex > 0) {
         displayedText.value = displayedText.value.slice(0, -1);
@@ -95,7 +109,11 @@ const eraseText = () => {
         setTimeout(typeText, 500);
     }
 };
-// Función para descargar CV
+/**
+ * Función para descargar CV
+ * Entradas: Ninguna
+ * Salida: Descarga de PDF
+ */
 const downloadCV = () => {
     const link = document.createElement('a');
     link.href = '/documents/cv.pdf'; 

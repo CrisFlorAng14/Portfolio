@@ -5,9 +5,10 @@ import NavbarHeader from './components/NavbarHeader.vue';
 import FooterSection from './components/FooterSection.vue';
 
 onMounted(() => {
-  // Cargar particles.min.js dinámicamente desde public
   const script = document.createElement('script');
-  script.src = '/particles.min.js'; // Cargar desde /public
+  // Cargar particulas -> carpeta public
+  script.src = '/particles.min.js';
+  // Configuración de particulas
   script.onload = () => {
     if (window.particlesJS) {
       window.particlesJS('particles-js', {
@@ -52,7 +53,9 @@ onMounted(() => {
 
 <template>
   <div class="particles-container">
+    <!-- Contenedor de particulas -->
     <div id="particles-js" style="position: fixed; width: 100%; height: 100%; z-index: -1;" class="bg-gray-950"></div>
+    <!-- Contenedor principal -->
     <div class="content">
       <NavbarHeader />
       <RouterView />

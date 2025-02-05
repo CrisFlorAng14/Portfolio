@@ -2,6 +2,7 @@
     <footer class="bg-gray-900">
         <div class="p-5">
             <div class="grid grid-cols-12">
+                <!-- Sección de redes sociales -->
                 <div class="col-span-12 md:col-span-6 flex items-center justify-center order-2 md:order-1">
                     <div class="py-5 flex gap-2">
                         <a href="https://www.facebook.com/cristian.2002.flores/" target="_blank">
@@ -21,6 +22,7 @@
                         </a>
                     </div>
                 </div>
+                <!-- Sección de derechos de autor -->
                 <div class="col-span-12 md:col-span-6 text-center md:text-left order-1 md:order-2">
                     <h4 class="font-bold text-gray-300">© {{ year }} Cristian Flores.</h4>
                     <h3 class="font-semibold text-gray-500">Ing. en Tecnologías de la Información</h3>
@@ -32,10 +34,12 @@
 </template>
 
 <script setup>
+// Obtención del año actual
 const year = new Date().getFullYear();
 </script>
 
 <script>
+// Componentes SVG utilizados
 import FacebookIcon from "./icons/SocialMedia/FacebookIcon.vue";
 import GithubTool from "./icons/GithubTool.vue";
 import InstagramIcon from "./icons/SocialMedia/InstagramIcon.vue";

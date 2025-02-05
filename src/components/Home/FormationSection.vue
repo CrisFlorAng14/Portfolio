@@ -1,3 +1,8 @@
+<!-- COMPONENTE DE FORMACIÓN - ESTUDIOS
+    Muestra los estudios que he realizado y los títulos recibidos
+    - Información general de estudio
+    - Título en PDF
+-->
 <template>
     <div class="px-5 md:px-9 py-4">
         <div class="mb-2">
@@ -49,7 +54,7 @@
             </div>
         </div>
 
-        <!-- Modal -->
+        <!-- Modal del título en PDF -->
         <div v-if="isModalOpen" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-20">
             <div class="bg-gray-600 bg-opacity-50 backdrop-blur-md p-4 rounded-lg shadow-lg w-3/4 h-[80vh]">
                 <div class="flex justify-between items-center">
@@ -67,12 +72,21 @@ import { ref } from 'vue';
 
 const isModalOpen = ref(false);
 const pdfUrl = ref('');
-
+/**
+ * Función para abrir modal con PDF
+ * Entradas: URL
+ * Salidas: Modal con PDF
+ */
 const openModal = (url) => {
     pdfUrl.value = url;
     isModalOpen.value = true;
 };
 
+/**
+ * Función para cerrar modal
+ * Entradas: Ninguna
+ * Salidas: Cerrar modal, url vacía del PDF
+ */
 const closeModal = () => {
     isModalOpen.value = false;
     pdfUrl.value = '';

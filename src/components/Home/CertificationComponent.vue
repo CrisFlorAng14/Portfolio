@@ -1,4 +1,11 @@
+<!-- COMPONENTE DE CERTIFICACIÓN 
+    Plantilla para recibir datos de la certificación y mostrarla (1 sola certificación)
+    - Certificación
+    - Año
+    - Documento PDF en modal
+-->
 <template>
+    <!-- Componente de certificación individual -->
     <div class="col-span-6 md:col-span-3 bg-gray-900 bg-opacity-50 rounded-md">
         <div class="p-4">
             <div class="md:min-h-[3.5rem]">
@@ -23,7 +30,7 @@
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal de la certificación -->
     <div v-if="isModalOpen" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-20">
         <div class="bg-gray-600 bg-opacity-50 backdrop-blur-md p-4 rounded-lg shadow-lg w-3/4 h-[80vh]">
             <div class="flex justify-between items-center">
@@ -40,7 +47,11 @@ import { ref } from 'vue';
 
 const isModalOpen = ref(false);
 const pdfUrl = ref('');
-
+/**
+ * Función para mostrar modal y documento
+ * Entradas: URL
+ * Salidas: Modal con PDF
+ */
 const openModal = (url) => {
     if (url) {
         pdfUrl.value = url;
@@ -58,6 +69,7 @@ const closeModal = () => {
 
 <script>
 export default {
+    // Propiedades que utiliza la certificación
     props: {
         name: {
             type: String,

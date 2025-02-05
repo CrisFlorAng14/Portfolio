@@ -1,3 +1,8 @@
+<!-- COMPONENTE DE HABILIDADES
+    Muestra las tecnologías y herramientas con las que he trabajado
+    - Tecnologías
+    - Herramientas
+-->
 <template>
     <div class="">
         <div class="px-9 py-4">
@@ -160,7 +165,11 @@ export default {
         const hoverColor4 = ref('');
         const hoverColor5 = ref('');
 
-        // Función para cambiar los colores cuando se hace hover
+        /**
+         * Función para cambiar los colores
+         * Entradas: colores
+         * Salida: Icono con colores 
+         */
         const setHoverColor = (color1, color2, color3, color4, color5) => {
             hoverColor1.value = color1;
             hoverColor2.value = color2;
@@ -168,7 +177,7 @@ export default {
             hoverColor4.value = color4;
             hoverColor5.value = color5;
         };
-
+        // Retornar los valores según la posición del mouse
         return {
             hoverColor1,
             hoverColor2,
@@ -180,8 +189,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-
-
-</style>

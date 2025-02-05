@@ -1,3 +1,9 @@
+<!-- COMPONENTE DE LOS PROYECTOS DESARROLLADOS
+    Muestra los proyectos más recientes que se desarrollaron
+    - Proyecto
+    - Año
+    - Descripción
+-->
 <template>
     <div class="md:h-[100vh]" id="projects">
         <div class="px-9 py-4">
@@ -98,7 +104,3 @@
         </div>
     </div>
 </template>
-
-<style scoped>
-
-</style>

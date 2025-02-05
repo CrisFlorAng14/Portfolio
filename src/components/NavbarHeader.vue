@@ -102,7 +102,7 @@ const scrollTo = (id, closeMenu = false) => {
     if (element) {
         element.scrollIntoView({
             behavior: 'smooth',  // Desplazamiento suave
-            block: 'start',      // Desplazarse al inicio del elemento
+            block: 'start',
         });
     }
     if (closeMenu) {

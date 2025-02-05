@@ -1,3 +1,10 @@
+<!-- COMPONENTE DE FORMACIÓN ACADEMICA Y EXPERIENCIA
+    Muestra el menu de opciones y la sección según el usuario seleccione
+    - Estudios
+    - Certificaciones
+    - Habilidades
+    - Experiencia
+-->
 <template>
     <div class="md:h-[100vh]" id="formation">
         <div class="px-9 py-4">
@@ -8,7 +15,7 @@
                     </div>
                 </div>
 
-                <!-- Submenu -->
+                <!-- Submenu de opciones -->
                 <div class="col-span-12 md:col-span-6">
                     <div class="flex items-center justify-center md:items-end md:justify-end">
                         <button
@@ -38,7 +45,7 @@
                     </div>
                 </div>
             </div>
-        <!-- Sección donde se mostrará el contenido -->
+        <!-- Sección de contenido -->
         </div>
         <div class="mt-4">
             <FormationSection v-if="currentTab === 'formation'" />
@@ -65,7 +72,7 @@ export default {
 },
     data() {
         return {
-            currentTab: 'formation',
+            currentTab: 'formation', // Retorna la sección de 'Formación' por defecto
         };
     },
 };

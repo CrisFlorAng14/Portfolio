@@ -1,9 +1,17 @@
+<!-- COMPONENTE DE SECCIÓN DE EXPERIENCIA 
+    Muestra las áreas en las que he participado y trabajado
+    - Ing. en TI
+    - Tec. en Informática
+    - Ilustrador
+-->
 <template>
     <div class="">
         <div class="px-9 py-4">
+            <!-- Título -->
             <div class="py-3">
                 <h3 class="font-semibold text-2xl text-white text-center md:text-left">Experiencia</h3>
             </div>
+            <!-- Plantilla de vista previa de experiencia -->
             <div class="grid grid-cols-2 gap-2">
                 <div v-for="(item, index) in experiences" :key="index"
                     class="flex md:gap-8 bg-gray-900 bg-opacity-50 backdrop-blur-md p-2 md:p-4 text-white hover:text-teal-500 rounded-lg">
@@ -24,7 +32,7 @@
                 </div>
             </div>
 
-            <!-- Modal -->
+            <!-- Modal de detalles de experiencia -->
             <ModalExperience :isOpen="modalOpen" :title="modalTitle" :content="modalContent" @close="modalOpen = false" />
         </div>
     </div>
@@ -50,6 +58,7 @@ export default {
     },
     data() {
         return {
+            // Información que será mostrada cuando el modal se active
             modalOpen: false,
             modalTitle: '',
             modalContent: '',
@@ -64,6 +73,7 @@ export default {
         };
     },
     methods: {
+        // Método para mostrar modal con envío de propiedades
         openModal(title, content) {
             this.modalTitle = title;
             this.modalContent = content;

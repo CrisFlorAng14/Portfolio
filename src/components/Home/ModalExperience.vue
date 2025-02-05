@@ -1,3 +1,7 @@
+<!-- COMPONENTE DEL MODAL DE EXPERIENCIA
+    Se muestra después de que en ExperienceSection se active algun modal
+    Se muestra información depende del tipo de title
+-->
 <template>
     <transition name="fade">
         <div v-show="isOpen" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 p-5 md:p-0">
@@ -64,11 +68,11 @@
                         </ul>
                     </div>
                 </div>
-
+                
                 <div v-else>
                     <p class="text-red-600 font-semibold">Opción no reconocida.</p>                    
                 </div>
-
+                <!-- Botón para cerrar modal -->
                 <button @click="closeModal" class="mt-4 px-4 py-1 bg-cyan-950 border border-teal-500 text-teal-500 rounded-lg hover:bg-cyan-700 hover:text-white hover:border-white duration-300">
                     Cerrar
                 </button>
@@ -80,6 +84,7 @@
 
 <script>
 export default {
+    // Propiedades recibidas
     props: {
         isOpen: Boolean,
         title: String,
