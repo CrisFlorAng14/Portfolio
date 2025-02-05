@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-gray-900 h-[56vh] md:h-[20vh]">
+    <footer class="bg-gray-900">
         <div class="p-5">
             <div class="grid grid-cols-12">
                 <div class="col-span-12 md:col-span-6 flex items-center justify-center order-2 md:order-1">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
                 <div class="col-span-12 md:col-span-6 text-center md:text-left order-1 md:order-2">
-                    <h4 class="font-bold text-gray-300">© {{ year }} Cristian Flores Anguiano. Todos los derechos reservados.</h4>
+                    <h4 class="font-bold text-gray-300">© {{ year }} Cristian Flores Anguiano.</h4>
                     <h3 class="font-semibold text-gray-500">Ing. en Tecnologías de la Información</h3>
                     <p class="text-gray-700">cfloresang.1402@gmail.com</p>
                     

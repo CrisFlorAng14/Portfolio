@@ -1,5 +1,5 @@
 <template>
-    <div class="px-5 md:px-9 py-4 h-[45rem] md:h-0">
+    <div class="px-5 md:px-9 py-4">
         <div class="mb-2">
             <h3 class="font-semibold text-2xl text-white text-center md:text-left">Títulos</h3>
         </div>
@@ -11,7 +11,7 @@
                         <h3 class="font-bold text-white text-sm md:text-base">Universidad Politécnica del Estado de Morelos (UPEMOR)</h3>
                         <h4 class="font-semibold text-gray-500 mt-2 text-sm md:text-base">Ingeniero en Tecnologías de la Información</h4>
                         <button 
-                            @click="openModal('../../../public/documents/titles/upemor.pdf')" 
+                            @click="openModal('/documents/titles/upemor.pdf')" 
                             class="bg-cyan-950 px-6 py-1 mt-3 rounded-md font-semibold text-teal-400"
                         >
                             Ver Documento
@@ -33,7 +33,7 @@
                         <h3 class="font-bold text-white text-sm md:text-base">Colegio Nacional de Educación Profesional (CONALEP p. Temixco)</h3>
                         <h4 class="font-semibold text-gray-500 mt-2 text-sm md:text-base">Técnico en informática</h4>
                         <button 
-                            @click="openModal('../../../public/documents/titles/conalep.pdf')" 
+                            @click="openModal('/documents/titles/conalep.pdf')" 
                             class="bg-cyan-950 px-6 py-1 mt-3 rounded-md font-semibold text-teal-400"
                         >
                             Ver Documento

@@ -1,6 +1,6 @@
 <template>
-    <div class="h-[80rem] md:h-0">
-        <div class="px-9">
+    <div class="">
+        <div class="px-9 py-4">
             
             <div class="grid grid-cols-12 md:gap-16">
                 <div class="col-span-12 md:col-span-6">

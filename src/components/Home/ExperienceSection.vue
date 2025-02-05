@@ -1,6 +1,6 @@
 <template>
-    <div class="h-[45rem] md:h-0">
-        <div class="px-9">
+    <div class="">
+        <div class="px-9 py-4">
             <div class="py-3">
                 <h3 class="font-semibold text-2xl text-white text-center md:text-left">Experiencia</h3>
             </div>

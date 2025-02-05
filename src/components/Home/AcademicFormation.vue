@@ -13,25 +13,25 @@
                     <div class="flex items-center justify-center md:items-end md:justify-end">
                         <button
                         @click.prevent="currentTab = 'formation'"
-                        :class="['bg-cyan-950', 'hover:bg-cyan-800', 'text-teal-400', 'border', 'px-2', 'py-1', 'border-teal-700', currentTab === 'formation' ? 'bg-teal-500 text-cyan-950' : '']"
+                        :class="['bg-cyan-950', 'hover:bg-cyan-800', 'text-teal-400', 'border', 'px-2', 'py-1', 'border-teal-700', currentTab === 'formation' ? 'bg-cyan-600 text-gray-900' : '']"
                         class="rounded-l-lg text-sm md:text-base px-1">
                             Estudios
                         </button>
                         <button
                         @click.prevent="currentTab = 'certification'"
-                        :class="['bg-cyan-950', 'hover:bg-cyan-800', 'text-teal-400', 'border', 'px-2', 'py-1', 'border-teal-700', currentTab === 'certification' ? 'bg-teal-500 text-cyan-950' : '']"
+                        :class="['bg-cyan-950', 'hover:bg-cyan-800', 'text-teal-400', 'border', 'px-2', 'py-1', 'border-teal-700', currentTab === 'certification' ? 'bg-cyan-600 text-gray-900' : '']"
                         class="text-sm md:text-base px-1">
                             Certificaciones
                         </button>
                         <button
                         @click.prevent="currentTab = 'skills'"
-                        :class="['bg-cyan-950', 'hover:bg-cyan-800', 'text-teal-400', 'border', 'px-2', 'py-1', 'border-teal-700', currentTab === 'skills' ? 'bg-teal-500 text-cyan-950' : '']"
+                        :class="['bg-cyan-950', 'hover:bg-cyan-800', 'text-teal-400', 'border', 'px-2', 'py-1', 'border-teal-700', currentTab === 'skills' ? 'bg-cyan-600 text-gray-900' : '']"
                         class="text-sm md:text-base px-1">
                             Habilidades
                         </button>
                         <button
                         @click.prevent="currentTab = 'experience'"
-                        :class="['bg-cyan-950', 'hover:bg-cyan-800', 'text-teal-400', 'border', 'px-2', 'py-1', 'border-teal-700', currentTab === 'experience' ? 'bg-teal-500 text-cyan-950' : '', 'rounded-r-lg']"
+                        :class="['bg-cyan-950', 'hover:bg-cyan-800', 'text-teal-400', 'border', 'px-2', 'py-1', 'border-teal-700', currentTab === 'experience' ? 'bg-cyan-600 text-gray-900' : '', 'rounded-r-lg']"
                         class="text-sm md:text-base px-1">
                             Experiencia
                         </button>
