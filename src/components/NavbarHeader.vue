@@ -1,10 +1,31 @@
 <template>
     <nav class="bg-gray-900 text-white fixed top-0 w-full p-4 z-10">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="/" class="text-lg font-bold">Portafolio web</a>
+            <a href="/" class="text-lg font-bold">{{ $t("WebPortfolio") }}</a>
 
             <!-- Menú en dispositivos grandes -->
             <ul class="hidden md:flex space-x-4">
+                <li class="relative">
+                    <button @click="toggleLanguageMenu" class="text-white flex items-center space-x-2">
+                        <!-- Ícono de mundo -->
+                        <p>{{ $i18n.locale.toUpperCase() }}</p>
+                        
+                        <!-- Triángulo hacia abajo -->
+                        <TriangleIcon/>
+                    </button>
+
+                    <!-- Submenú de idiomas -->
+                    <div v-if="languageMenuOpen" class="absolute bg-gray-800 p-2 mt-1 rounded-md space-y-2 translate-x-[-2.5rem]">
+                        <button @click="$i18n.locale = 'es'" class="flex gap-4 text-white hover:bg-gray-700 p-2 rounded-md">
+                            <MX/>
+                            {{ $t("Spanish") }}
+                        </button>
+                        <button @click="$i18n.locale = 'en'" class="flex gap-4 text-white hover:bg-gray-700 p-2 rounded-md">
+                            <US/>
+                            {{ $t("English") }}
+                        </button>
+                    </div>
+                </li>
                 <li>
                     <a 
                         href="#start" 
@@ -12,7 +33,7 @@
                         :class="{'text-teal-500 duration-500': activeSection === 'start'}"
                         @click.prevent="scrollTo('start')"
                     >
-                        Inicio
+                        {{ $t("StartNav") }}
                     </a>
                 </li>
                 <li>
@@ -22,7 +43,7 @@
                         :class="{'text-teal-500 duration-500': activeSection === 'projects'}"
                         @click.prevent="scrollTo('projects')"
                     >
-                        Proyectos
+                        {{ $t("ProjectsNav") }}
                     </a>
                 </li>
                 <li>
@@ -32,17 +53,40 @@
                         :class="{'text-teal-500 duration-500': activeSection === 'formation'}"
                         @click.prevent="scrollTo('formation')"
                     >
-                        Formación
+                        {{ $t("FormationNav") }}
                     </a>
                 </li>
             </ul>
 
-            <!-- Icono de menú para dispositivos pequeños -->
-            <button @click="toggleMenu" class="md:hidden text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
+            <!-- Icono de menú y botón de idioma para dispositivos pequeños -->
+            <div class="flex md:hidden items-center space-x-2">
+                <!-- Botón de idioma -->
+                <button @click="toggleLanguageMenu" class="text-white relative">
+                    <!-- Ícono de mundo -->
+                    <div class="flex gap-1">
+                        <p>{{ $i18n.locale.toUpperCase() }}</p>
+                        <TriangleIcon/>
+                    </div>
+                    <!-- Submenú de idiomas para móviles -->
+                    <div v-if="languageMenuOpen" class="absolute bg-gray-800 p-2 mt-1 rounded-md space-y-2 translate-x-[-7rem]">
+                        <button @click="$i18n.locale = 'es'" class="flex gap-4 text-white hover:bg-gray-700 p-2 rounded-md">
+                            <MX/>
+                            {{ $t("Spanish") }}
+                        </button>
+                        <button @click="$i18n.locale = 'en'" class="flex gap-4 text-white hover:bg-gray-700 p-2 rounded-md">
+                            <US/>
+                            {{ $t("English") }}
+                        </button>
+                    </div>
+                </button>
+
+                <!-- Botón de menú -->
+                <button @click="toggleMenu" class="text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <!-- Menú desplegable en dispositivos pequeños con animación -->
@@ -56,7 +100,7 @@
                             :class="{'text-teal-500 duration-500': activeSection === 'start'}"
                             @click.prevent="scrollTo('start', true)"
                         >
-                            Inicio
+                            {{ $t("StartNav")}}
                         </a>
                     </li>
                     <li>
@@ -66,7 +110,7 @@
                             :class="{'text-teal-500 duration-500': activeSection === 'projects'}"
                             @click.prevent="scrollTo('projects', true)"
                         >
-                            Proyectos
+                            {{ $t("ProjectsNav") }}
                         </a>
                     </li>
                     <li>
@@ -76,7 +120,7 @@
                             :class="{'text-teal-500 duration-500': activeSection === 'formation'}"
                             @click.prevent="scrollTo('formation', true)"
                         >
-                            Formación
+                            {{ $t("FormationNav") }}
                         </a>
                     </li>
                 </ul>
@@ -87,13 +131,22 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
+import MX from './icons/MX.vue';
+import US from './icons/US.vue';
+import TriangleIcon from './icons/TriangleIcon.vue';
 
 const menuOpen = ref(false);
 const activeSection = ref('');
+const languageMenuOpen = ref(false); // Control del submenú de idiomas
 
 // Función para alternar el estado del menú en dispositivos pequeños
 const toggleMenu = () => {
     menuOpen.value = !menuOpen.value;
+};
+
+// Función para alternar el submenú de idiomas
+const toggleLanguageMenu = () => {
+    languageMenuOpen.value = !languageMenuOpen.value;
 };
 
 // Función para desplazarse suavemente hacia un elemento y cerrar el menú si está abierto

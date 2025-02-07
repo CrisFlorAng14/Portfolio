@@ -9,7 +9,7 @@
         <div class="px-9 py-4">
             <!-- Título -->
             <div class="py-3">
-                <h3 class="font-semibold text-2xl text-white text-center md:text-left">Experiencia</h3>
+                <h3 class="font-semibold text-2xl text-white text-center md:text-left">{{ $t("Experience") }}</h3>
             </div>
             <!-- Plantilla de vista previa de experiencia -->
             <div class="grid grid-cols-2 gap-2">
@@ -20,12 +20,12 @@
                             <component :is="item.icon" class="transition-colors duration-500 w-[2rem] md:w-10" />
                         </div>
                         <div class="col-span-8 md:col-span-6 flex items-center">
-                            <p class="text-white text-xs md:text-base">{{ item.title }}</p>
+                            <p class="text-white text-xs md:text-base">{{ $t(item.title) }}</p>
                         </div>
                         <div class="col-span-12 md:col-span-4 md:flex items-center justify-end">
                             <button @click="openModal(item.title, item.description)"
                                 class="text-slate-400 w-full bg-slate-800 text-sm md:text-base mt-3 md:mt-0 px-3 py-1 rounded-full hover:text-gray-200 hover:bg-slate-700 font-medium transition-colors duration-500">
-                                Detalles
+                                {{ $t("Details")}}
                             </button>
                         </div>
                     </div>
@@ -63,12 +63,12 @@ export default {
             modalTitle: '',
             modalContent: '',
             experiences: [
-                { title: "Desarrollo de Software", icon: CodeTool },
-                { title: "Soporte Técnico", icon: ToolExperience },
-                { title: "Respaldo y Recuperación", icon: DatabaseExperience },
-                { title: "Diseño y Edición", icon: DesignExperience },
-                { title: "Enseñanza", icon: TeachExperience },
-                { title: "Informática Administrativa", icon: OfficeExperience }
+                { title: "SoftwareDevelopment", icon: CodeTool },
+                { title: "TechnicalSupport", icon: ToolExperience },
+                { title: "BackupAndRecovery", icon: DatabaseExperience },
+                { title: "DesignAndEditing", icon: DesignExperience },
+                { title: "Teaching", icon: TeachExperience },
+                { title: "AdministrativeIT", icon: OfficeExperience }
             ]
         };
     },

@@ -9,7 +9,7 @@
     <!-- Título -->
     <div class="px-9 py-4">
         <div class="mb-2">
-            <h3 class="font-semibold text-2xl text-white text-center md:text-left">Certificaciones</h3>
+            <h3 class="font-semibold text-2xl text-white text-center md:text-left">{{ $t("Certifications") }}</h3>
         </div>
         <!-- Certificaciones -->
         <div class="grid grid-cols-12 gap-3 w-full">

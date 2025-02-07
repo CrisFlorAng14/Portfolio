@@ -23,7 +23,7 @@
                         @click="openModal(document)" 
                         class="bg-yellow-950 text-yellow-400 px-5 py-1 rounded-full text-sm md:text-base"
                     >
-                        Certificación
+                        {{ $t("Certification") }}
                     </button>
                 </div>
             </div>
@@ -34,7 +34,7 @@
     <div v-if="isModalOpen" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-20">
         <div class="bg-gray-600 bg-opacity-50 backdrop-blur-md p-4 rounded-lg shadow-lg w-3/4 h-[80vh]">
             <div class="flex justify-between items-center">
-                <h3 class="text-lg font-semibold text-white">Documento</h3>
+                <h3 class="text-lg font-semibold text-white">{{ $t("Document") }}</h3>
                 <button @click="closeModal" class="text-white hover:bg-red-500 hover:text-white font-bold py-1 px-3 rounded-lg mb-1 duration-300">&times;</button>
             </div>
             <iframe :src="pdfUrl" class="w-full h-[70vh] rounded-md"></iframe>

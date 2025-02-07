@@ -6,65 +6,65 @@
     <transition name="fade">
         <div v-show="isOpen" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 p-5 md:p-0">
             <div class="p-6 rounded-lg shadow-lg w-96 transition-opacity duration-300 bg-gray-900 bg-opacity-40 backdrop-blur-md">
-                <h2 class="text-2xl font-bold text-white">{{ title }}</h2>
+                <h2 class="text-2xl font-bold text-white">{{ $t(title) }}</h2>
 
-                <div v-if="title === 'Desarrollo de Software'">
+                <div v-if="title === 'SoftwareDevelopment'">
                     <div class="text-slate-500 text-base py-5">
                         <ul class="list-disc ml-5">
-                            <li>Diseño de interfaces</li>
-                            <li>Desarrollo web</li>
-                            <li>Desarrollo de escritorio</li>
-                            <li>Desarrollo Full-Stack</li>
+                            <li>{{ $t("SD-Act1") }}</li>
+                            <li>{{ $t("SD-Act2") }}</li>
+                            <li>{{ $t("SD-Act3") }}</li>
+                            <li>{{ $t("SD-Act4") }}</li>
                         </ul>
                     </div>
                 </div>
 
-                <div v-else-if="title === 'Soporte Técnico'">
+                <div v-else-if="title === 'TechnicalSupport'">
                     <div class="text-slate-500 text-base py-5">
                         <ul class="list-disc ml-5">
-                            <li>Mantenimiento preventivo y correctivo</li>
-                            <li>Instalación de software</li>
-                            <li>Soporte Remoto</li>
+                            <li>{{ $t("TS-Act1") }}</li>
+                            <li>{{ $t("TS-Act2") }}</li>
+                            <li>{{ $t("TS-Act3") }}</li>
                         </ul>
                     </div>
                 </div>
 
-                <div v-else-if="title === 'Respaldo y Recuperación'">
+                <div v-else-if="title === 'BackupAndRecovery'">
                     <div class="text-slate-500 text-base py-5">
                         <ul class="list-disc ml-5">
-                            <li>Respaldo de datos en la nube</li>
-                            <li>Recuperación de Información de DD</li>
+                            <li>{{ $t("BR-Act1") }}</li>
+                            <li>{{ $t("BR-Act2") }}</li>
                         </ul>
                     </div>
                 </div>
 
-                <div v-else-if="title === 'Diseño y Edición'">
+                <div v-else-if="title === 'DesignAndEditing'">
                     <div class="text-slate-500 text-base py-5">
                         <ul class="list-disc ml-5">
-                            <li>Diseño de logos</li>
-                            <li>Animaciones sencillas</li>
-                            <li>Arte e Ilustración</li>
-                            <li>Edición de fotos</li>
+                            <li>{{ $t("DE-Act1") }}</li>
+                            <li>{{ $t("DE-Act2") }}</li>
+                            <li>{{ $t("DE-Act3") }}</li>
+                            <li>{{ $t("DE-Act4") }}</li>
                         </ul>
                     </div>
                 </div>
 
-                <div v-else-if="title === 'Enseñanza'">
+                <div v-else-if="title === 'Teaching'">
                     <div class="text-slate-500 text-base py-5">
                         <ul class="list-disc ml-5">
-                            <li>Clases de computación</li>
-                            <li>Clases de dibujo artístico</li>
-                            <li>Clases de baile</li>
+                            <li>{{ $t("TE-Act1") }}</li>
+                            <li>{{ $t("TE-Act2") }}</li>
+                            <li>{{ $t("TE-Act3") }}</li>
                         </ul>
                     </div>
                 </div>
 
-                <div v-else-if="title === 'Informática Administrativa'">
+                <div v-else-if="title === 'AdministrativeIT'">
                     <div class="text-slate-500 text-base py-5">
                         <ul class="list-disc ml-5">
-                            <li>Gestión de documentos</li>
-                            <li>Generación de contratos y cartas</li>
-                            <li>Uso de equipo de oficina</li>
+                            <li>{{ $t("AI-Act1") }}</li>
+                            <li>{{ $t("AI-Act2") }}</li>
+                            <li>{{ $t("AI-Act3") }}</li>
                         </ul>
                     </div>
                 </div>

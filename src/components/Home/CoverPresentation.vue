@@ -1,10 +1,3 @@
-<!-- COMPONENTE DE PRESENTACIÓN
-    Muestra la sección de presentación de mi persona y del portafolio
-    - Foto de perfil
-    - Descripción
-    - Contacto
-    - CV
--->
 <template>
     <div class="md:h-[100vh]" id="start">
         <div class="grid grid-cols-12 gap-2 w-full mt-14">
@@ -14,7 +7,7 @@
                 <button @click="downloadCV" 
                     class="bg-none text-teal-500 border border-teal-500 px-6 py-2 rounded-full font-semibold 
                     hover:bg-cyan-950 hover:text-teal-300 hover:border-teal-300 transition duration-300">
-                    Descargar CV
+                    {{ $t('DownloadCV')}}
                 </button>
             </div>
 
@@ -28,24 +21,15 @@
 
                 <!-- Descripción -->
                 <div class="text-gray-500 text-sm md:text-base mt-4">
-                    <p>
-                        Soy Cristian Flores, Ing. en Tecnologías de la Información y te invito a ver mi portafolio
-                        como desarrollador de software.
-                    </p>
+                    <p>{{ $t('Intro') }}</p>
                     <br>
-                    <p>
-                        Apasionado por la tecnología y el arte, me especializo en combinar ambos mundos para diseñar 
-                        soluciones innovadoras y eficientes. Actualmente me desempeño como desarrollador Full-Stack, 
-                        con experiencia en diversas áreas complementarias, como soporte técnico, diseño de interfaces, 
-                        informática administrativa y enseñanza.
-                    </p>
+                    <p>{{ $t('Passion') }}</p>
                     <br>
-                    <p>
-                        Te invito a explorar mi trabajo y conocer más sobre cómo puedo aportar valor a tus proyectos.
-                    </p>
+                    <p>{{ $t('Invite') }}</p>
                     <br>
-                    <p>Puedes contactarme a través de mis redes sociales o descargar mi CV.</p>
+                    <p>{{ $t('Contact') }}</p>
                 </div>
+
                 <!-- Redes sociales -->
                 <div class="py-5 flex gap-2">
                     <a href="https://www.facebook.com/cristian.2002.flores/" target="_blank">
@@ -69,11 +53,21 @@
     </div>
 </template>
 
-
 <script setup>
-import { ref, onMounted } from "vue";
-// Oraciones para el efecto de máquina de escribir
-const texts = ["¡Hola mundo!", "Cristian Flores", "Ing. en TI", "Desarrollador", "Ilustrador"];
+import { ref, onMounted, computed } from "vue";
+import { useI18n } from "vue-i18n";
+
+const { t } = useI18n();
+
+// Textos para el efecto de máquina de escribir
+const texts = computed(() => [
+    t("HelloWorld"),
+    "Cristian Flores",
+    t("Title"),
+    t("Role"),
+    t("Hobby")
+]);
+
 const displayedText = ref("");
 const showCursor = ref(true);
 let textIndex = 0;
@@ -81,12 +75,10 @@ let charIndex = 0;
 
 /**
  * Función para escribir texto
- * Entradas: Ninguna
- * Salida: Oración del arreglo texts
  */
 const typeText = () => {
-    if (charIndex < texts[textIndex].length) {
-        displayedText.value += texts[textIndex][charIndex];
+    if (charIndex < texts.value[textIndex].length) {
+        displayedText.value += texts.value[textIndex][charIndex];
         charIndex++;
         setTimeout(typeText, 100);
     } else {
@@ -96,8 +88,6 @@ const typeText = () => {
 
 /**
  * Función para borrar texto
- * Entradas: Ninguna
- * Salida: Texto eliminado
  */
 const eraseText = () => {
     if (charIndex > 0) {
@@ -105,14 +95,13 @@ const eraseText = () => {
         charIndex--;
         setTimeout(eraseText, 50);
     } else {
-        textIndex = (textIndex + 1) % texts.length;
+        textIndex = (textIndex + 1) % texts.value.length;
         setTimeout(typeText, 500);
     }
 };
+
 /**
  * Función para descargar CV
- * Entradas: Ninguna
- * Salida: Descarga de PDF
  */
 const downloadCV = () => {
     const link = document.createElement('a');
@@ -135,6 +124,7 @@ import GithubTool from "../icons/GithubTool.vue";
 import InstagramIcon from "../icons/SocialMedia/InstagramIcon.vue";
 import WhatsappIcon from "../icons/SocialMedia/WhatsappIcon.vue";
 import LinkedinIcon from "../icons/SocialMedia/LinkedinIcon.vue";
+
 export default {
     components: {
         FacebookIcon,

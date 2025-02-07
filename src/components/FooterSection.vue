@@ -24,8 +24,8 @@
                 </div>
                 <!-- Sección de derechos de autor -->
                 <div class="col-span-12 md:col-span-6 text-center md:text-left order-1 md:order-2">
-                    <h4 class="font-bold text-gray-300">© {{ year }} Cristian Flores.</h4>
-                    <h3 class="font-semibold text-gray-500">Ing. en Tecnologías de la Información</h3>
+                    <h4 class="font-bold text-gray-300">© {{ year }} Cristian Flores Anguiano</h4>
+                    <h3 class="font-semibold text-gray-500">{{ $t("Title") }}</h3>
                     <p class="text-gray-700">cfloresang.1402@gmail.com</p>
                 </div>
             </div>

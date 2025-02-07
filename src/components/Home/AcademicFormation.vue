@@ -11,7 +11,7 @@
             <div class="grid grid-cols-12 gap-2 w-full">
                 <div class="col-span-12 md:col-span-6">
                     <div class="md:flex md:items-start md:justify-start">
-                        <h2 class="text-white font-bold text-4xl text-center md:text-left">Formación</h2>
+                        <h2 class="text-white font-bold text-4xl text-center md:text-left">{{ $t("Formation") }}</h2>
                     </div>
                 </div>
 
@@ -22,25 +22,25 @@
                         @click.prevent="currentTab = 'formation'"
                         :class="['bg-cyan-950', 'hover:bg-cyan-800', 'text-teal-400', 'border', 'px-2', 'py-1', 'border-teal-700', currentTab === 'formation' ? 'bg-cyan-600 text-gray-900' : '']"
                         class="rounded-l-lg text-sm md:text-base px-1">
-                            Estudios
+                            {{ $t("Studies") }}
                         </button>
                         <button
                         @click.prevent="currentTab = 'certification'"
                         :class="['bg-cyan-950', 'hover:bg-cyan-800', 'text-teal-400', 'border', 'px-2', 'py-1', 'border-teal-700', currentTab === 'certification' ? 'bg-cyan-600 text-gray-900' : '']"
                         class="text-sm md:text-base px-1">
-                            Certificaciones
+                            {{ $t("Certifications") }}
                         </button>
                         <button
                         @click.prevent="currentTab = 'skills'"
                         :class="['bg-cyan-950', 'hover:bg-cyan-800', 'text-teal-400', 'border', 'px-2', 'py-1', 'border-teal-700', currentTab === 'skills' ? 'bg-cyan-600 text-gray-900' : '']"
                         class="text-sm md:text-base px-1">
-                            Habilidades
+                            {{ $t("Skills") }}
                         </button>
                         <button
                         @click.prevent="currentTab = 'experience'"
                         :class="['bg-cyan-950', 'hover:bg-cyan-800', 'text-teal-400', 'border', 'px-2', 'py-1', 'border-teal-700', currentTab === 'experience' ? 'bg-cyan-600 text-gray-900' : '', 'rounded-r-lg']"
                         class="text-sm md:text-base px-1">
-                            Experiencia
+                            {{ $t("Experience") }}
                         </button>
                     </div>
                 </div>

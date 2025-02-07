@@ -10,7 +10,7 @@
             <div class="grid grid-cols-12 md:gap-16">
                 <div class="col-span-12 md:col-span-6">
                     <div class="py-3">
-                        <h3 class=" font-semibold text-2xl text-white text-center md:text-left">Tecnologías</h3>
+                        <h3 class=" font-semibold text-2xl text-white text-center md:text-left">{{ $t("Technologies") }}</h3>
                     </div>
                     <div class="grid grid-cols-3 md:grid-cols-4 gap-2">
                         <div class="flex flex-col items-center bg-gray-900 bg-opacity-50 backdrop-blur-md p-4 text-white hover:text-orange-600 rounded-lg">
@@ -69,7 +69,7 @@
                 </div>
                 <div class="col-span-12 md:col-span-6">
                     <div class="py-3">
-                        <h3 class=" font-semibold text-2xl text-white">Herramientas</h3>
+                        <h3 class=" font-semibold text-2xl text-white">{{ $t("Tools") }}</h3>
                     </div>
                     <div class="grid grid-cols-3 gap-2">
                         <div class="flex flex-col items-center bg-gray-900 bg-opacity-50 backdrop-blur-md p-4 text-white hover:text-orange-600 rounded-lg">
